@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>智能仪器与信息处理研究室</title>
+    <meta name="copyright" content="NewThread Studio" />
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
+    <link type="text/css" rel="stylesheet" href="css/headnews.css" />
+    <script type="text/javascript"src="js/nav.js"></script>
+    <script type="text/javascript"src="js/headnews-ie6PNG.js"></script>
+    <script type="text/javascript"src="js/headnews-jquery.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+
+	$("ul#topnav li").hover(function() { //www.codefans.net
+		$(this).css({ 'background' : '#1376c9 url(topnav_active.gif) repeat-x'}); //#0138a2Add background color + image on hovered list item
+		$(this).find("span").show(); //Show the subnav
+	} , function() { //on hover out...
+		$(this).css({ 'background' : 'none'}); //Ditch the background
+		$(this).find("span").hide(); //Hide the subnav
+	});
+
+	});
+	</script>
+	
+	<!--新闻图片切换-->
+	<script language="javascript">
+		$(function(){
+		//图片滚动宽度
+		var wVal=653;
+		var Timer=null;
+		$(".keImgs").width($(".keImgs").find("li").size()*wVal)
+		var keCutNum=0;
+		var relNum=$(".keImgBtn li").size();
+		//滚动动画
+		function srcMove(){
+		    $(".keImgs").animate({"left":-keCutNum*wVal},100);
+			$(".keImgBtn li").removeClass("keImgCutLi");$(".keImgBtn li").eq(keCutNum).addClass("keImgCutLi");
+			$(".keImgTxt li").hide();$(".keImgTxt li").eq(keCutNum).show();	
+		}
+		function keChgImg(){
+		 	keCutNum++;
+			if(keCutNum==relNum){
+				keCutNum=0;
+			}
+			srcMove();
+		}
+		var Timer=setInterval(keChgImg,3000)
+		$(".keChgImg").hover(function(){clearInterval(Timer)},function(){Timer=setInterval(keChgImg,3000)});
+		$(".keChgBtnR").click(function(){
+			keCutNum++;
+			if(keCutNum==relNum){
+				keCutNum=0;
+			}
+			srcMove();
+		});
+		$(".keChgBtnL").click(function(){
+			keCutNum--;
+			if(keCutNum<0){
+				keCutNum=relNum-1;
+			}
+			srcMove();
+		});
+		$(".keImgBtn li").hover(function(){
+			keCutNum=$(".keImgBtn li").index(this);
+			srcMove();
+		});
+		//End
+		})
+	</script>
+
+	<!--底部成果图片滚动-->
+	<script type="text/javascript">
+		var speed=10;
+		var tab=document.getElementById("demo");
+		var tab1=document.getElementById("demo1");
+		var tab2=document.getElementById("demo2");
+		tab2.innerHTML=tab1.innerHTML;
+		function Marquee(){
+		if(tab2.offsetWidth-tab.scrollLeft<=0)
+		tab.scrollLeft-=tab1.offsetWidth
+		else{
+		tab.scrollLeft++;
+		}
+		}
+		var MyMar=setInterval(Marquee,speed);
+		tab.onmouseover=function() {clearInterval(MyMar)};
+		tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!--头部内容-->
+		<div id="header">
+				<div id="head-title">
+					智能仪器与信息处理研究室</br>
+					<span class="font-english-head">&nbsp;Intelligent Instruments and Information Processing Lab</span>
+				</div>
+			<!--<div id="headimage1">
+				<img alt="智能仪器与信息处理实验室" src="images/logo.jpg"/>
+			</div>
+			<div id="headimage2">
+				<img alt="English Version" src="images/logo1.jpg" title="English Version" usemap="#FPMap0"/>
+			</div>-->
+		</div>
+
+		<!--导航内容-->
+		<div id="nav">
+			    <ul id="topnav">
+			        <li><a href="iiiplab_index.html">首页</a></li>
+			        <li>
+			            <a href="http://www.cug.edu.cn/">研究室概况</a>
+			            <span>
+			                <a href="http://www.cug.edu.cn/">研究室介绍</a> |
+			                <a href="iiiplab_sceondary.html">主任介绍</a>
+			            </span>
+			        </li>
+			        <li>
+			            <a href="http://www.cug.edu.cn/">科研方向</a>
+			            <span>
+			                <a href="http://www.cug.edu.cn/">实验教学仪器研制</a> |
+			                <a href="http://www.cug.edu.cn/">导航与深空探测</a> |
+			                <a href="http://www.cug.edu.cn/">电磁探测仪器研制</a> |
+			                <a href="http://www.cug.edu.cn/">高分遥感图像处理</a> |
+			                <a href="http://www.cug.edu.cn/">教材建设</a>
+			            </span>
+			        </li>
+			        <li>
+			            <a href="http://www.cug.edu.cn/">科研队伍</a>
+			            <span>
+			                <a href="http://www.cug.edu.cn/">指导老师</a> |
+			                <a href="http://www.cug.edu.cn/">博士研究生</a> |
+			                <a href="http://www.cug.edu.cn/">硕士研究生</a>
+			            </span>
+			        </li>
+			        <li>
+			            <a href="http://www.cug.edu.cn/">科研项目</a>
+			            <span>
+			                <a href="http://www.cug.edu.cn/">已结题项目</a> |
+			                <a href="http://www.cug.edu.cn/">研发中项目</a>
+			            </span>
+			        </li>
+			        <li>
+			            <a href="http://www.cug.edu.cn/">科研成果</a>
+			            <span>
+			                <a href="http://www.cug.edu.cn/">获奖情况</a> |
+			                <a href="http://www.cug.edu.cn/">论文</a> |
+			                <a href="http://www.cug.edu.cn/">专利</a> |
+			                <a href="http://www.cug.edu.cn/">著作权</a> |
+			                <a href="http://www.cug.edu.cn/">教材编写</a>
+			            </span>
+			        </li>
+			        <li><a href="http://www.cug.edu.cn/">团队文化</a></li>
+			        <li><a href="http://www.cug.edu.cn/">下载专区</a></li>
+			        <li><a href="http://www.cug.edu.cn/">用户入口>></a></li>
+			    </ul>
+		</div>
+
+		<!--内容部分-->
+		<div id="main">
+			<!--新闻图片切换和实验室简介-->
+			<div id="headnews-introduction">
+				<div id="headnews">
+					
+					<!--焦点图开始-->
+						<div class="keChgImg">
+							<ul class="keImgs">
+							<li><a href="iiiplab_sceondary_li_content.html"><img src="images/datu1.jpg" width="653" height="292" alt="2014年研究室暑期年会正式召开" /></a></li>
+							<li><a href=""><img src="images/datu2.jpg" width="653" height="292" alt="" /></a></li>
+							<li><a href=""><img src="images/datu3.jpg" width="653" height="292" alt="" /></a></li>
+							<li><a href=""><img src="images/datu4.jpg" width="653" height="292" alt="" /></a></li>
+							<li><a href=""><img src="images/datu1.jpg" width="653" height="292" alt="" /></a></li>
+							</ul>
+							<div class="keImgTitleBg"></div>
+							<div class="keImgBtn">
+								 <ul>
+								  <li class="keCor1 keImgCutLi">1<img src="images/chgSq.gif" width="11" height="6" /></li>
+								  <li class="keCor2">2<img src="images/chgSq.gif" width="11" height="6" /></li>
+								  <li class="keCor3">3<img src="images/chgSq.gif" width="11" height="6" /></li>
+								  <li class="keCor4">4<img src="images/chgSq.gif" width="11" height="6" /></li>
+								  <li class="keCor5">5<img src="images/chgSq.gif" width="11" height="6" /></li>
+								 </ul>
+							</div>
+							<div class="keImgTxt">
+								 <ul>
+								  <li><a class="cor_blue" href="iiiplab_sceondary_li_content.html" title="">2014年研究室暑期年会正式召开</a></li>
+								  <li class="hidden"><a class="cor_blue" href="">在森林公园完成电磁波探测实验</a></li>
+								  <li class="hidden"><a class="cor_blue" href="">纯Js/jQuery多图片左右渐变轮播展示相册</a></li>
+								  <li class="hidden"><a class="cor_blue" href="">Js/jQuery带左右箭头+按钮弹性滑动焦点图</a></li>
+								  <li class="hidden"><a class="cor_blue" href="">js/jQuery图片展示网页特效</a></li>
+								 </ul>
+							</div>
+								<img class="keChgBtnL" src="images/chgBtnL.png" width="40" height="40" />
+								<img class="keChgBtnR" src="images/chgBtnR.png" width="40" height="40" />
+						</div>
+						<!--End-->
+						<div class="clear"></div>
+					
+					<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+					</div>
+				</div>
+				<div id="briefintro">
+						<div id="briefintro-title">
+						研究室简介
+						<span class="font-english-title">Brief-Introduction</span>
+						</div>
+
+						<div id="content">
+				           <span class="font2"><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"智能仪器与信息处理研究室"团队隶属湖北省武汉市中国地质大学机械与电子学院的团队。
+
+							本研究团队现有教授1人，讲师2人，共发表论文40余篇者，获得“XXXXXX”奖1人，获得AAAAAAAAAAA"奖2人，是一支充满活力的不断发展壮大的科研团队。目前在读全日制博士、硕士研究生20余人。
+
+							本研究团队本着"BBBBBBBBBBBBBB"的精神，积极进取，开拓创新，致力于成为国内一流、国际知名的智能仪器与信息处理研究开发基地和人才培养基地。
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							</span>
+						</div>
+				</div>
+			</div>
+
+			<!--仪器研制、学术动态、科研项目-->
+			<div id="instru-acade-proj">
+				<!--仪器研制-->
+				<div id="instru-develop">
+					<div id="instru-title">
+						&nbsp;&nbsp;仪器研制<span class="font-english">&nbsp;Instruments Develop</span>
+					</div>
+					<ul id="instru-list">
+						<li><a href="">&nbsp;实验教学仪器研制成功</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;导航与深空探测</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;电磁探测仪器研制完满结束</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;高分遥感图像处理</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;教材建设（新出版EDA教材两部）</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;所研制的XXXXXXX正式在王乐斋淘宝店开售</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;高分遥感图像处理</a></li>
+						<div class="divcss5"></div>
+						<li><a href="iiiplab_sceondary_li.html" class="more">&nbsp;&nbsp;更多仪器...</a></li>
+					</ul>
+				</div>
+
+				<!--学术动态-->
+				<div id="acade-trend">
+					<div id="acade-title">
+						&nbsp;&nbsp;学术动态<span class="font-english">&nbsp;Academic Trends</span>
+					</div>
+		            <ul id="acade-list">
+						<li><a href="">&nbsp;实验教学仪器研制成功</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;导航与深空探测</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;电磁探测仪器研制完满结束</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;高分遥感图像处理</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;教材建设（新出版EDA教材两部）</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;所研制的XXXXXXX正式在王乐斋淘宝店开售</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;高分遥感图像处理</a></li>
+						<div class="divcss5"></div>
+						<li><a href="" class="more">&nbsp;&nbsp;更多学术动态...</a></li>
+					</ul>
+		              <!--<div class="divcss5"></div>加虚线-->
+				</div>
+
+				<!--科研项目-->
+				<div id="scien-payoff">
+					<div id="scien-title">
+						&nbsp;&nbsp;科研项目<span class="font-english">&nbsp;Scientific Projects</span>
+					</div>
+		            <ul id="scien-list">
+						<li><a href="">&nbsp;实验教学仪器研制成功</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;导航与深空探测</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;电磁探测仪器研制完满结束</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;高分遥感图像处理</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;教材建设（新出版EDA教材两部）</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;所研制的XXXXXXX正式在王乐斋淘宝店开售</a></li>
+						<div class="divcss5"></div>
+						<li><a href="">&nbsp;高分遥感图像处理</a></li>
+						<div class="divcss5"></div>
+						<li><a href="" class="more">&nbsp;&nbsp;更多科研项目...</a></li>
+					</ul>
+		              <!--<div class="divcss5"></div>加虚线-->
+				</div>
+			</div>
+		</div>
+
+		<!--成果展示-->
+		<div id="result-show">
+			<div id="in-result-show">
+				<div id="result-show1">
+				<a href="#"><img src="images/result-show1.jpg" border="0" /></a>
+				<a href="#"><img src="images/result-show2.jpg" border="0" /></a>
+				<a href="#"><img src="images/result-show1.jpg" border="0" /></a>
+				<a href="#"><img src="images/result-show2.jpg" border="0" /></a>
+				<a href="#"><img src="images/result-show1.jpg" border="0" /></a>
+				<a href="#"><img src="images/result-show2.jpg" border="0" /></a>
+				<a href="#"><img src="images/result-show1.jpg" border="0" /></a>
+				<a href="#"><img src="images/result-show2.jpg" border="0" /></a>
+				<a href="#"><img src="images/result-show1.jpg" border="0" /></a>
+				<a href="#"><img src="images/result-show2.jpg" border="0" /></a>
+				</div>
+				<div id="result-show2"></div>
+			</div>
+		</div>
+	
+		<!--底部内容-->
+		<div id="footer">
+		    版权所有&copy;2014 中国地质大学 智能仪器与信息处理研究室 <A 
+            href="http://au.cug.edu.cn/" target=_blank>自动化学院</A><br / >地址：武汉市洪山区鲁磨路388号 邮编:430074  联系方式：027-XXXXXXX | 技术支持：王培培 
+	</div>
+
+	
+</body>
